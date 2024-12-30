@@ -318,6 +318,18 @@ playButton.addEventListener('click', () => {
   }
   isPlaying = !isPlaying; // Перемикаємо статус
 });
+
+// Знайдемо всі кнопки з атрибутом data-target
+    document.querySelectorAll('button[data-target]').forEach(button => {
+      button.addEventListener('click', function() {
+        // Отримуємо ID тексту, на який вказує кнопка
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+
+        // Перемикаємо видимість елементу
+        targetElement.style.display = (targetElement.style.display === 'none') ? 'block' : 'none';
+      });
+    });
   </script>
  
 

@@ -26,6 +26,33 @@
     </w:WordDocument>
     </xml><![endif]-->
   <style type="text/css">
+.player {
+  position: fixed; /* Завжди фіксований на екрані */
+  bottom: 20px;    /* Відступ від нижнього краю */
+  right: 20px;     /* Відступ від правого краю */
+  width: 60px;     /* Ширина кружечка */
+  height: 60px;    /* Висота кружечка */
+  background-color: #000000; /* Колір фону */
+  border-radius: 50%;        /* Робимо елемент круглим */
+  display: flex;             /* Вирівнюємо вміст усередині */
+  align-items: center;       /* По вертикалі */
+  justify-content: center;   /* По горизонталі */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для об'ємності */
+  cursor: pointer;           /* Зміна курсора при наведенні */
+  z-index: 1000;             /* Завжди поверх іншого вмісту */
+}
+
+.play-button {
+  background: none;     /* Без фону */
+  border: none;         /* Без рамки */
+  color: white;         /* Колір кнопки */
+  font-size: 24px;      /* Розмір тексту */
+  cursor: pointer;      /* Зміна курсора */
+}
+
+.play-button:focus {
+  outline: none; /* Забираємо обведення при фокусі */
+}
 .rollover:hover .rollover-first {
   max-height:0px!important;
   display:none!important;
@@ -79,6 +106,13 @@ a[x-apple-data-detectors],
       <w:DontUseAdvancedTypographyReadingMail></w:DontUseAdvancedTypographyReadingMail>
     </w:WordDocument>
     </xml><![endif]-->
+  <audio id="backgroundAudio">
+        <source src="https://zvukipro.com/uploads/files/2021-07/1627104739_21071.mp3" type="audio/mp3">
+        Ваш браузер не підтримує елемент audio.
+  </audio>
+  <div class="player">
+  <button class="play-button">❚❚</button>
+  </div>
   <div dir="ltr" class="es-wrapper-color" lang="uk" style="background-color:#EFF7F6"><!--[if gte mso 9]>
 			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
 				<v:fill type="tile" color="#eff7f6"></v:fill>
@@ -129,7 +163,7 @@ a[x-apple-data-detectors],
                <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                  <tbody><tr>
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
-                   <table cellpadding="0" cellspacing="0" width="100%" background="%D0%9D%D0%BE%D0%B2%D0%B8%D0%B9%20%D0%BB%D0%B8%D1%81%D1%82_files/frame_4077589.png" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-image:url(https://flsfbiz.stripocdn.email/content/guids/CABINET_096f1467ede64f30b16e7ed801a85ec92b513f0b377693866b94eafdb1722ea7/images/frame_4077589.png);background-repeat:no-repeat;background-position:center top;border-width:2px 2px 0;border-style:solid solid solid;border-color:#bf9000 #bf9000 #00000000" role="presentation">
+                   <table cellpadding="0" cellspacing="0" width="100%"  style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;);background-repeat:no-repeat;background-position:center top;border-width:2px 2px 0;border-style:solid solid solid;border-color:#bf9000 #bf9000 #00000000" role="presentation">
                      <tbody><tr>
                       <td align="center" class="es-m-p20r es-m-p20l" style="Margin:0;padding-top:30px;padding-right:30px;padding-bottom:10px;padding-left:30px"><h2 class="es-m-txt-c" style="Margin:0;font-family:Aclonica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:28px;font-style:normal;font-weight:normal;line-height:33.6px;color:#FFFFFF">Personalized Letter from Hogwarts on Harry Potter Day!</h2></td>
                      </tr>
@@ -180,7 +214,7 @@ ip+port, user, password для sFTP сервер.&nbsp;<br>
                  </tr>
                  <tr>
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
-                   <table cellpadding="0" cellspacing="0" width="100%" background="%D0%9D%D0%BE%D0%B2%D0%B8%D0%B9%20%D0%BB%D0%B8%D1%81%D1%82_files/frame_4077590.png" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-image:url(https://flsfbiz.stripocdn.email/content/guids/CABINET_096f1467ede64f30b16e7ed801a85ec92b513f0b377693866b94eafdb1722ea7/images/frame_4077590.png);background-repeat:no-repeat;background-position:center bottom;border-width:0 2px 2px;border-style:solid solid solid;border-color:#00000000 #bf9000 #bf9000" role="presentation">
+                   <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;);background-repeat:no-repeat;background-position:center bottom;border-width:0 2px 2px;border-style:solid solid solid;border-color:#00000000 #bf9000 #bf9000" role="presentation">
                      <tbody><tr>
                       <td align="left" class="es-m-p20r es-m-p20l" style="Margin:0;padding-right:30px;padding-left:30px;padding-top:10px;padding-bottom:30px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:Poppins, sans-serif;line-height:21px;letter-spacing:0;color:#EFEFEF;font-size:14px">Accio, Junior Conley's Hogwarts Letter!🌟</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:Poppins, sans-serif;line-height:21px;letter-spacing:0;color:#EFEFEF;font-size:14px"><br></p><p style="Margin:0;mso-line-height-rule:exactly;font-family:Poppins, sans-serif;line-height:21px;letter-spacing:0;color:#EFEFEF;font-size:14px">Best regards,</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:Poppins, sans-serif;line-height:21px;letter-spacing:0;color:#EFEFEF;font-size:14px">Teresa Walters<br>Head Wizard</p></td>
                      </tr>
@@ -262,6 +296,26 @@ ip+port, user, password для sFTP сервер.&nbsp;<br>
    </tbody></table>
   </div>
   <script>
+        
+const playButton = document.querySelector('.play-button');
+const audioPlayer = document.getElementById('backgroundAudio');
+
+// Змінна для перевірки статусу
+let isPlaying = true;
+audioPlayer.play();
+
+playButton.addEventListener('click', () => {
+  if (isPlaying) {
+    // Якщо грає, ставимо на паузу
+    audioPlayer.pause();
+    playButton.textContent = '▶'; // Змінюємо іконку
+  } else {
+    // Якщо не грає, запускаємо відтворення
+    audioPlayer.play();
+    playButton.textContent = '❚❚'; // Змінюємо іконку
+  }
+  isPlaying = !isPlaying; // Перемикаємо статус
+});
 // Знайдемо всі кнопки з атрибутом data-target
     document.querySelectorAll('button[data-target]').forEach(button => {
       button.addEventListener('click', function() {

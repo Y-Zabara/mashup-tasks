@@ -111,7 +111,7 @@ a[x-apple-data-detectors],
         Ваш браузер не підтримує елемент audio.
   </audio>
   <div class="player">
-  <button class="play-button">❚❚</button>
+  <button class="play-button">▶</button>
   </div>
   <div dir="ltr" class="es-wrapper-color" lang="uk" style="background-color:#EFF7F6"><!--[if gte mso 9]>
 			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
@@ -300,9 +300,8 @@ ip+port, user, password для sFTP сервер.&nbsp;<br>
 const playButton = document.querySelector('.play-button');
 const audioPlayer = document.getElementById('backgroundAudio');
 
-// Змінна для перевірки статусу
-let isPlaying = true;
-audioPlayer.play();
+// Початковий статус
+let isPlaying = false;
 
 playButton.addEventListener('click', () => {
   if (isPlaying) {
@@ -311,22 +310,14 @@ playButton.addEventListener('click', () => {
     playButton.textContent = '▶'; // Змінюємо іконку
   } else {
     // Якщо не грає, запускаємо відтворення
-    audioPlayer.play();
+    audioPlayer.play()
+      .catch(error => {
+        console.error("Відтворення заблоковане браузером:", error);
+      });
     playButton.textContent = '❚❚'; // Змінюємо іконку
   }
   isPlaying = !isPlaying; // Перемикаємо статус
 });
-// Знайдемо всі кнопки з атрибутом data-target
-    document.querySelectorAll('button[data-target]').forEach(button => {
-      button.addEventListener('click', function() {
-        // Отримуємо ID тексту, на який вказує кнопка
-        const targetId = this.getAttribute('data-target');
-        const targetElement = document.getElementById(targetId);
-
-        // Перемикаємо видимість елементу
-        targetElement.style.display = (targetElement.style.display === 'none') ? 'block' : 'none';
-      });
-    });
   </script>
  
 
